@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Loader from '../components/Loader';
 import { toast } from 'react-toastify'
 import { useDispatch, useSelector } from 'react-redux'
 import { useRegisterMutation } from '../store/slices/usersApiSlice'
@@ -14,7 +13,7 @@ const SignUp = () => {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
 
-    const [register, { isLoading }] = useRegisterMutation();
+    const [register] = useRegisterMutation();
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
